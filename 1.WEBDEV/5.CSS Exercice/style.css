@@ -49,18 +49,18 @@ input[type=text]{
 }
 
 /* Give both <p>'s inside the 3rd <div> a pink background*/
-body div:nth-child(5n) p {
+body div:nth-child(5) p {
     background-color: pink;
 }
 
 
 /* Give the 2nd <p> inside the 3rd <div> a 5px white border*/
-body div:nth-child(5n) p:nth-child(3n){
+body div:nth-child(5) p:nth-child(3){
     border: 5px white solid;
 }
 
 /* Make the <em> in the 3rd <div> element white and 20px font(font-size:20px)*/
-body div:nth-child(5n) em{
+body div:nth-child(5) em{
     font-size: 20px;
     color: white;    
 }
