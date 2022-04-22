@@ -8,6 +8,9 @@
         <link rel="shortcut icon" href="./images/MC.svg" />
     </head>
     <body>
+       
+
+
         <nav class="main-nav">
             <a class="nav-logo" href="https://www.microclub.com">
                 <img src="images/MC.svg" alt="" class="main-nav-image" />
@@ -36,9 +39,39 @@
                     </ul>
                 </li>
                 <li class="main-nav-element"><a href="#Contact">Contact</a></li>
-                <button class="button">Register in the event</button>
+                <button class="button" onclick="openForm()">Register in the event</button>
             </ul>
         </nav>
+        <div class="container" id="popupForm">
+            <label for="input" class="close" onclick="closeForm()"> x </label>
+            <div class="title">Registration</div>
+            <form action="#">
+                <div class="user-data">
+                    <div class="input-box">
+                        <span class="details"> First Name </span>
+                        <input type="text" required>
+                    </div>
+                    <div class="input-box">
+                     <span class="details"> First Name </span>
+                     <input type="text" required>
+                 </div>
+                 <div class="input-box">
+                     <span class="details"> First Name </span>
+                     <input type="text" required>
+                 </div>
+                 <div class="input-box">
+                     <span class="details"> First Name </span>
+                     <input type="text" required>
+                 </div>
+                 
+                </div>
+                <div class="btn">
+                 <input type="submit" class="button" value="COMPLETE THE REGISTRATION">
+             </div>
+            </form>
+ 
+        </div>
+ 
         <header id="Home">
             <section>
                 <h1>MICRO CLUB DESIGN FEST</h1>
@@ -74,15 +107,19 @@
                     </p>
                     <div class="about-container">
                         <div class="about-counters">
-                            <h3>00</h3>
+                            <h3 id="kk1"> 00
+                                
+                            </h3>
                             <p>Days Event</p>
                         </div>
                         <div class="about-counters">
-                            <h3>00</h3>
+                            <h3 id="kk2">
+                               00
+                            </h3>
                             <p>CONFRENCES</p>
                         </div>
                         <div class="about-counters">
-                            <h3>00</h3>
+                            <h3 id="kk3">00</h3>
                             <p>WORKSHOPS</p>
                         </div>
                     </div>
@@ -423,31 +460,49 @@
             </section>
         </main>
         <footer>
-            <section id="Sponsors">
+
+            <section class="slider" id="Sponsors">
                 <h2>Sponsors</h2>
-                <div>
-                    <img src="images/brand2.png" alt="" />
-                    <img src="images/brand2.png" alt="" />
-                    <img src="images/brand2.png" alt="" />
-                    <img src="images/brand2.png" alt="" />
-                    <img src="images/brand2.png" alt="" />
+                <div class="slide-track">
+                    <div class="slide">
+                        <img  src="images/brand2.png" alt="" />
+                    </div>
+                    <div class="slide">
+                        <img  src="images/brand2.png" alt="" />
+                    </div>
+                    <div class="slide">
+                        <img  src="images/brand2.png" alt="" />
+                    </div>
+                    <div class="slide">
+                        <img  src="images/brand2.png" alt="" />
+                    </div>
+                    <div class="slide">
+                        <img  src="images/brand2.png" alt="" />
+                    </div>
+                    <div class="slide">
+                        <img  src="images/brand2.png" alt="" />
+                    </div>
+                    <div class="slide">
+                        <img  src="images/brand2.png" alt="" />
+                    </div>
+                
+                    
+                    
+                    
                 </div>
             </section>
-            <section id="Contact">
+
+            <section class="contact" id="Contact">
                 <div class="contact-parts">
-                    <img src="images/MC.svg" alt="" />
+                    <img class="nav-logo"  src="images/MC.svg" alt="" />
                     <p>
-                        Lorem ipsum, dolor sit amet consectetur adipisicing
-                        elit. Repudiandae dolores deserunt nesciunt possimus,
-                        non, impedit iure officia nostrum doloribus porro,
-                        commodi et? Dicta distinctio asperiores dolorem rem,
-                        accusantium doloribus debitis!
+                        Duis aute irure dolor inassfa reprehenderit in voluptate velit esse cillum. Explicabo, maiores quisquam numquam quia reiciendis sit, accus antium atque ex animi perspiciatis ab odit earum assumenda aliquid santium.
                     </p>
                 </div>
                 <div class="contact-parts">
                     <h5>Contact Us</h5>
-                    <a href="#Location">Confrence Room USTHB</a>
-                    <a href="mailto:microclub@usthb.dz">microclub@usthb.dz</a>
+                    <a class="link" href="#Location">Confrence Room USTHB</a>
+                    <a  class="link" href="mailto:microclub@usthb.dz">microclub@usthb.dz</a>
                     <a class="contact-phone" href="tel:+213542170114"
                         >(+213) 542 17 01 14</a
                     >
@@ -462,10 +517,11 @@
                     <button class="button" id="subscribe">
                         Subscribe for more details
                     </button>
+                    <p>submiting ...</p>
                 </div>
             </section>
             <hr />
-            <p>
+            <p class="last-child">
                 Copyright ©2022 All rights reserved
                 <a href="https://www.microclub.net">@MicroClub</a>
             </p>
@@ -477,5 +533,86 @@
                 $(".owl-carousel").owlCarousel({items:4,nav:true});
             });
         </script>
+        <script>
+            function openForm() {
+             
+              document.getElementById("popupForm").style.display = "block";
+              document.querySelector("main").classList.add("blurFilter")
+              document.querySelector("header").classList.add("blurFilter")
+              document.querySelector("nav").classList.add("blurFilter")
+              document.querySelector("footer").classList.add("blurFilter")
+              document.getElementById("popupForm").classList.add("NoblurFilter")
+              
+            }
+            function closeForm() {
+                document.getElementById("popupForm").style.display = "none";
+                document.querySelector("main").classList.remove("blurFilter")
+                document.querySelector("header").classList.remove("blurFilter")
+                document.querySelector("nav").classList.remove("blurFilter")
+                document.querySelector("footer").classList.remove("blurFilter")
+                
+            }
+        </script>
+        <script type="text/javascript">
+            var debut1 = 00
+            var debut2 = 00
+            var debut3 = 00
+                   function finish (){
+                clearInterval(debut)
+            }
+            function bip3 (){
+                debut3++
+                if(debut3>20){finish()
+                }
+                else{
+                    var kk= document.getElementById("kk3").innerHTML=debut3+"+"
+                }
+            }
+            function bip1 (){
+                debut1++
+                if(debut1>3){finish()
+                }
+                else{
+                    var kk= document.getElementById("kk1").innerHTML=debut1+"+"
+                }
+            }
+            function bip2 (){
+                debut2++
+                if(debut2>10){finish()
+                }
+                else{
+                    var kk= document.getElementById("kk2").innerHTML=debut2+"+"
+                }
+            }
+           
+            function start(){ 
+                debut3 =setInterval (bip3,100)
+                debut2 =setInterval (bip2,100)
+                debut = setInterval (bip1,100)
+                
+                
+            }
+            window.addEventListener('load',function(){
+              start()
+            })                                 
+        </script>
+    <script>
+
+menu = document.querySelector('.main-nav')
+window.addEventListener('scroll',function (e){
+    contite = window.scrollY
+    hasScrolledClass = menu.classList.contains('fixed')
+    if(contite>500 && !hasScrolledClass ){
+        menu.classList.add('fixed')
+    menu.style.width = widthM+"px"
+    }
+    else  if(contite<=500 && hasScrolledClass ){
+        menu.classList.remove('fixed')
+        manu.classList.add("nofixe")
+   }
+})
+    </script>
+        
+       
     </body>
 </html>
